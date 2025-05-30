@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript task one</title>
+</head>
+
+
+<body>
+    <h1>javascript tasks one</h1>
+    <script>
+        let num1 = parseInt(prompt("Enter first number"));
+        let num2 = parseInt(prompt("Enter second number"))
+        for (let i = num1; i <= num2; i++) {
+            if (i % 4 === 0 && i % 6 === 0) {
+                console.log("Quadhex");
+            }
+            else if (i % 4 === 0) {
+                console.log("quad");
+            }
+            else if (i % 6 === 0) {
+                console.log("Hex");;
+            }
+            else {
+                console.log(i);
+            }
+        }
+    </script>
+</body>
+
+</html>

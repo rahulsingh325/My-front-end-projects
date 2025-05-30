@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>javascript task 2</h1>
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+
+            for (let i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        let start = parseInt(prompt("Enter start number"));
+        let end = parseInt(prompt("Enter end number"))
+        function sumPrimes(start, end) {
+            let total = 0;
+
+            for (let current = start; current <= end; current++) {
+                if (isPrime(current)) {
+                    total += current;
+                }
+            }
+
+            return total;
+        }
+        console.log("Sum of prime are:", sumPrimes(start ,end)); 
+    </script>
+</body>
+
+</html>

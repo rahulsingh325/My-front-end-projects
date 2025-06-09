@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Tree</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            background-color: white;
+        }
+
+        .arrow {
+            position: relative;
+            border-left: 160px solid transparent;
+            border-right: 160px solid transparent;
+            border-bottom: 250px solid green;
+
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            top: 250px;
+            left: -50px;
+            width: 100px;
+            height: 150px;
+            background-color: red;
+        }
+
+        .text {
+            position: absolute;
+            top: 120px;
+            left: -60px;
+            color: white;
+            font-size: 48px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="arrow">
+        <div class="text">
+            VOTS
+        </div>
+    </div>
+</body>
+
+</html>

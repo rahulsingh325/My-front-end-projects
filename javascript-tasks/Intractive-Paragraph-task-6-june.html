@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Paragraph</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            font-size: 48px;
+        }
+
+        .highlight {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Click the paragraph below:</h1>
+    <div id="textContainer">
+        <p data-count="0">This is paragraph 1</p>
+        <hr>
+        <p data-count="0">This is paragraph 2</p>
+        <hr>
+        <p data-count="0">This is paragraph 3</p>
+    </div>
+
+    <script>
+        document.getElementById('textContainer').addEventListener('click', function (e) {
+            if (e.target.tagName === 'P') {
+                const p = e.target;
+
+                p.classList.toggle('highlight');
+
+                if (p.classList.contains('highlight')) {
+                    let count = parseInt(p.getAttribute('data-count'));
+                    count = count >= 3 ? 1 : count + 1;
+                    p.setAttribute('data-count', count);
+
+                    let textOnly = p.textContent.split(' (Clicked')[0];
+                    p.textContent = `${textOnly} (Clicked ${count} times)`;
+                } else {
+                    let textOnly = p.textContent.split(' (Clicked')[0];
+                    p.textContent = textOnly;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

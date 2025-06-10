@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Accordion</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hide-it {
+            display: none;
+        }
+
+        .show-it {
+            display: block;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>This is the Accordion</h1>
+
+    <div class="content">
+        <h2>Item 1</h2>
+        <p class="hide-it">This is the first description.</p>
+    </div>
+
+    <div class="content">
+        <h2>Item 2</h2>
+        <p class="hide-it">This is the second description.</p>
+    </div>
+
+    <div class="content">
+        <h2>Item 3</h2>
+        <p class="hide-it">This is the third description.</p>
+    </div>
+
+    <script>
+        let allHeadings = document.querySelectorAll("h2");
+
+        for (let i = 0; i < allHeadings.length; i++) {
+            allHeadings[i].addEventListener("click", function () {
+                let para = this.nextElementSibling;
+
+                if (para.classList.contains("hide-it")) {
+                    para.classList.remove("hide-it");
+                    para.classList.add("show-it");
+                } else {
+                    para.classList.remove("show-it");
+                    para.classList.add("hide-it");
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
